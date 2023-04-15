@@ -1,0 +1,331 @@
+git link --> https://github.com/harshalm2621/newrepo1.git
+token --> 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
+
+GIT 
+
+Basic commands
+
+[]#mkdir mumbaigit
+[]#cd mumbaigit
+[mumbaigit]# git init
+[mumbaigit]#git staus 
+[mumbaigit]#git add .
+[mumbaigit]#git log
+
+git remote -v
+git remote add origin <link>
+git remote remove origin 
+git remote rename <oldname> <newname>
+
+
+==============1st machin in mumbai region===================
+
+[mumbaigit]#git config --global user.name "bhupinder"
+[mumbaigit]#git config --global user.email "bhupinder@gmail.com"
+
+[mumbaigit]# git config --list
+
+==============2nd machin in singapore region===================
+
+[mumbaigit]#git config --global user.name "ajay"
+[mumbaigit]#git config --global user.email "ajay@outlook.com"
+
+[mumbaigit]#git config --list
+
+========================================4th Lecture==================================================================
+
+
+[mumbaigit]#cat > mumbai
+<enter some text here>
+
+[mumbaigit]# git status
+[mumbaigit]#git add . 
+[mumbaigit]#git commit -m "myfirst commit from mumbai"
+[mumbaigit]#git status
+[mumbaigit]#git log
+[mumbaigit]#git show <commit id>
+
+[mumbaigit]#git remote add origin <git link>
+[mumbaigit]#git push -u origin master 
+<username>
+<password> or <git token>
+
+[mumbaigit]#cat > mumbai
+<add some text in existing text>
+[mumbaigit]#git status
+[mumbaigit]#git add .
+[mumbaigit]#git status
+[mumbaigit]#git commit -m "my second code from mumbai"
+[mumbaigit]#git status
+[mumbaigit]#git log
+[mumbaigit]#git show <commit id>
+
+[mumbaigit]#git push origin master 
+<username>
+<git token>
+
+---------------------------------------------------------------------------
+
+[ec2-user]#mkdir singapore
+[singapore]#git init
+[singapore]#ls -a
+
+[singapore]#git remote ad origin <git link>
+[singapore]#git log
+[singapore]#git status
+[singapore]#git pull origin master 
+[singapore]#git log
+[singapore]#git show <commit id>
+
+[singapore]#cat >>mumbai
+<add text here>
+[singapore]#git status
+[singapore]#git add .
+[singapore]#git commit -m "commit from singapore"
+[singapore]#git log
+[singapore]#git show <commit id>
+[singapore]#git push origin masgter
+<username>
+<token>
+
+
+---------------------------------------------------------------------
+
+
+[mumbaigit]#git pull origin master
+[mumbaigit]#git log
+[mumbaigit]#git show <commit id>
+
+[mumbaigit]#vi .gitignore
+*.css
+*.java
+[mumbaigit]#git add .gitignore
+[mumbaigit]#git commit -m "ignore file formate"
+[mumbaigit]#git status
+[mumbaigit]#touch file1.txt file2.txt file3.java file4.css
+[mumbaigit]#ls
+[mumbaigit]#git status
+[mumbaigit]#git commit -m "ignore java ,css file"
+[mumbaigit]#git log
+[mumbaigit]#git show <commit id>
+
+
+latest commit 
+[mumbaigit]#git log -1
+
+all commit in oneline 
+[mumbaigit]#git log --oneline
+
+
+[mumbaigit]#git log --grep "ignore"
+
+================================================5th Lecture========================================================
+
+[singapore]#ls
+[singapore]#git log --oneline
+[singapore]#git branch 
+
+*************branch*********************
+
+to create new branch 
+[singapore]#git branch <branchname>
+to check 
+[singapore]#git branch
+[singapore]#git checkout branch1
+[singapore]#git branch
+[singapore]#git log --oneline
+
+
+[singapore]#git checkout branch1
+[singapore]#cat >branch1file
+text here
+[singapore]#ls
+[singapore]#git add .
+[singapore]#git commit -m "branch1 first commit"
+ [singapore]#git log --oneline
+
+[singapore]#git checkout master
+[singapore]#git log --oneline 
+
+[singapore]#git checout branch1
+[singapore]#cat >> branch1file
+<add some data>
+[singapore]#git add . 
+[singapore]#git commit -m "second commit from branch1"
+
+[singapore]#git checkout master 
+[singapore]#ls 
+
+
+now merger the code from branch1 to mster branch
+
+
+[singapore]#git branch
+*master
+branch1
+
+[singapore]#git merge branch1
+[singapore]#ls
+[singapore]#git log --oneline
+[singapore]#git push origin master
+
+*****************Git merge************************************
+
+[singapore]#git checout master
+[singapore]#cat >> rajptfile
+hello rajput
+[singapore]#git add .
+[singapore]#git commit -m "first commit before conflict"
+[singapore]#git checout branch1 
+[singapore]#cat >>rajputfile
+hi rajput
+[singapore]#git add .
+[singapore]#git commit -m " commit from master "
+
+[singapore]#gitr checkout master 
+[singapore]#git merge branch1 
+
+you will get conflict error 
+
+[singapore]#vi rajputfile
+hello rajput
+rajput saab kya haal
+[singapore]#git status
+[singapore]#git add .
+[singapore]#git commit -m "resolve conflict"
+
+[singapore]#git log --online
+
+
+************git stashing************
+
+(masterbranch)
+[singapore]#touch demofile
+[singapore]#git add .
+[singapore]#git commit -m "demofile"
+
+[singapore]#vi demofile
+first code 
+[singapore]#git stash
+[singapore]#vi demofile
+<you will get empty file>
+[singapore]#catv >demofile
+[singapore]#git stasj list
+[singapore]#vi demofile 
+2nd code for aplly
+[singapore]#git stash
+[singapore]#git stash list 
+[singapore]#git stash apply  stash@{1}
+
+[singapore]#cat demofile
+[singapore]#git add .
+[singapore]#git commit -m "fist code done"
+[singapore]#git stash apply stash@{0}
+[singapore]#vi demofile
+confilect are here /
+
+make changes
+[singapore]#git add .
+[singapore]#git commit -m "second code done"
+[singapore]#git status
+[singapore]#git log --oneline
+
+[singapore]#git stash list 
+[singapore]#git stash clear 
+[singapore]#git stash 
+
+*************************Git reset********************************
+it is used to reset from staging area only, but remain the data in working space
+
+
+1.soft
+2.complex
+3.hard
+
+(master branch)
+
+[singapore]#cat >> testfile
+hello bhupi
+[singapore]#git add .
+[singapore]#git status
+
+
+[singapore]#git reset .
+
+
+[singapore]#git status
+[singapore]#git add .
+
+now delete from staging area and workspace both
+
+[singapore]#git reset --hard
+ 
+now it will deleted from both side  
+
+
+
+**************************git revert*****************************************
+
+
+[singapore]#cat >>revert 
+paneer
+[singapore]#git add .
+[singapore]#git commit -m "this is first paneer commit "
+[singapore]#cat >>revert
+mashroom
+[singapore]#git add .
+[singapore]#git commit -m "this id mashroom commit"
+[singapore]#cat >>revert 
+garam masala 
+chana masala
+[singapore]#git add .
+[singapore]#git commit -m "wrong commit "
+[singapore]#cat rvert
+
+
+[singapore]#git revert <commit id>
+please ignore previous commit 
+[singapore]#ls
+[singapore]#cat revert
+[singapore]#git log --oneline
+
+
+**************remove untracked files*********************
+
+[singapore]#touch filex filey filez
+
+[singapore]#git clean -n       (it will ask confirmation )
+ or 
+[singapore]#git clean -f        (it will directly delete all files withou confirmation)
+
+
+
+**********************git tag*********************************
+
+[singapore]#git log --oneline
+
+[singapore]#git tag -a <tagname> -m "this is very imp commit <full commit id>
+
+[singapore]#git show <tagname>
+[singapore]#git tag
+
+*********tag delete****************
+
+[singapore]#git tag -d <tagname>
+
+[singapore]#git tag
+
+[singapore]#gitlog --oneline
+
+***************git cloning*******************
+
+
+[singapore]#ls 
+[singapore]#git clone <git link>
+
+[ec2-user]# git clone <git link>
+
+[singapore]#touch filep fileo 
+[singapore]#git add .
+[singapore]#git commit -m "new commit "
+[singapore]#git push origin master 
